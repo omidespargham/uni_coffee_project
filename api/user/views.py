@@ -21,8 +21,8 @@ def signin(request):
         return JsonResponse({'error': 'Send a post request with valid paramenter only'})
 
     # print(request.POST.get('email', None))  - if you will not get email, None will be printed
-    username = request.POST['email']
-    password = request.POST['password']
+    username = request.POST.get('email')
+    password = request.POST.get('password')
 
     print(username)
     print(password)
